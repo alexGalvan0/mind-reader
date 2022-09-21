@@ -19,7 +19,7 @@
 > - random = [] 
 
 ### **CREATE** Objects
-> - Page1 
+> - Page0 
 >   - *CurrentPage* = true
 >   - *PageIndex* : 0
 >   - *HelperText* : ""
@@ -30,7 +30,7 @@
 >   - GoButtom : true
 >   - ResetButton : false
 #### Click GoButtom
-> - Page2
+> - Page1
 >   - CurrentPage = false
 >   - *PageIndex* : 1
 >   - *HelperText* : "When you have your number click next"
@@ -41,7 +41,7 @@
 >   - GoButtom : false
 >   - ResetButton : true
 #### Click ButtonDisplayed
-> - Page3
+> - Page2
 >   - *CurrentPage* = false
 >   - *PageIndex* : 2
 >   - *HelperText* : "click to proceed"
@@ -52,7 +52,7 @@
 >   - GoButtom : false
 >   - ResetButton : true
 #### Click ButtonDisplayed
-> - Page4
+> - Page3
 >   - *CurrentPage* = false
 >   - *PageIndex* : 3
 >   - *HelperText* : "click to proceed"
@@ -63,7 +63,7 @@
 >   - GoButtom : false
 >   - ResetButton : true
 #### Click ButtonDisplayed
-> - Page5
+> - Page4
 >   - *CurrentPage* = false
 >   - *PageIndex* : 4
 >   - *HelperText* : "Note the symbol beside the number"
@@ -74,7 +74,7 @@
 >   - GoButtom : false
 >   - ResetButton : true
 #### click ButtonDisplayed
-> - Page6
+> - Page5
 >   - *CurrentPage* = false
 >   - *PageIndex* : 5
 >   - *HelperText* : "&"
