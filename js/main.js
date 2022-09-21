@@ -16,7 +16,7 @@ class Page {
                         buttonText = "",
                         headerText = "I can Read your mind",
                         exampleText = "",
-                        goButton = true,
+                        goButton = "block",
                         resetButton = false
                     )
     {
@@ -94,11 +94,25 @@ let page5 = new Page(
                         true, // ResetButton
                     );
 
-headerTexts.textContent = page1.headerText;
-helperText.textContent = page1.textContent;
-btnPlay.classList.add(page1.buttonDisplayed);
-btnText.textContent = page1.buttonText;
-exampleText.textContent = page1.exampleText;
-btnPlay.classList(page1.goButton);
-btnReset.classList(page1.resetButton);
-btnPlay.addEventListener('click',()=>{console.log(page1.update())})
+const pages = [
+                page0,
+                page1,
+                page2,
+                page3,
+                page4,
+                page5
+            ];
+
+
+
+btnPlay.addEventListener('click', () => {
+    pages[pageIndex].update()
+    headerTexts.textContent = pages[pageIndex].headerText;
+    helperText.textContent = pages[pageIndex].textContent;
+    btnPlay.classList.add(pages[pageIndex].buttonDisplayed);
+    btnText.textContent = pages[pageIndex].buttonText;
+    exampleText.textContent = pages[pageIndex].exampleText;
+    btnPlay.classList(pages[pageIndex].goButton);
+    btnReset.classList(pages[pageIndex].resetButton);   
+});
+
