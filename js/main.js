@@ -113,7 +113,7 @@ for (let l=0; l<=9; l++){
 //nums
 let nums = []
 let shuffledIndex = 0;
-for (let i=1; i<=100; i++){
+for (let i=0; i<=99; i++){
     if(i%9 == 0){
         nums.push(i + ' - ' + shuffled[0] + '<br>')
 
