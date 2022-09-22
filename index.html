@@ -11,24 +11,27 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-    <div class="container">
-        <div class="row 
-                    d-flex
-                    justify-content-center 
-                    align-items-center"
+    <div style="height:100vh ;"class="container d-flex flex-column">
 
-              style="height:100vh">
-            <h1 id="headerText">I can Read your mind</h1>
-            <button id="btnText" class="button navBtn hidden"></button>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+              <h1 id="headerText">I can Read your mind</h1>
+              <button id="btnText" class="button navBtn hidden"></button>
+            </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="row">
             <p id="helperText" class=""></p>
             <p class="" id="exampleText"></p>
-
-            <div class="col-12 justify-content-end">
-                <i id="btnPlay" class="bi bi-play-circle btn navBtn"></i>
-                <i id="btnReset" class="bi bi-rewind-circle hidden btn"></i>
-            </div>
-
+          </div>
         </div>
+
+        <div class="col d-flex justify-content-end align-items-end">
+          <i id="btnPlay" class=" btn navBtn">GO</i>
+          <i id="btnReset" class="bi bi-rewind-fill hidden btn"></i>
+        </div>  
+
     </div>
   </body>
 </html>

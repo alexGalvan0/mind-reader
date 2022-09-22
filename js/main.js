@@ -115,10 +115,10 @@ let nums = []
 let shuffledIndex = 0;
 for (let i=1; i<=100; i++){
     if(i%9 == 0){
-        nums.push(i + ' - ' + shuffled[1] )
+        nums.push(i + ' - ' + shuffled[0] + '<br>')
 
     } else {
-        nums.push(i + ' - ' + shuffled[shuffledIndex].toString().replace(',','\n'))
+       nums.push(i + ' - ' + shuffled[shuffledIndex] + '<br>')
 
         if (shuffledIndex > 9){
             shuffledIndex = 0;
@@ -136,11 +136,12 @@ btnReset.addEventListener('click', updatePage)
 
 let index = 0;
 function updatePage(e){
-    console.log(typeof(numString))
-    page4.headerText = nums
+
+    page4.headerText = nums.toString().replaceAll(',','')
     let answer = String(nums[8])
     let answerSymbol = answer[4]
     page5.headerText = answerSymbol;
+    page5.exampleText = "Your symbol is " + answerSymbol;
 
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
         index ++ 
@@ -148,7 +149,7 @@ function updatePage(e){
    } else {
         index = 0;
    }
-    headerText.textContent = pages[index].headerText;
+    headerText.innerHTML = pages[index].headerText;
     helperText.textContent = pages[index].helperText;
 
     //large next button

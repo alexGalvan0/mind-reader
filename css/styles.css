@@ -1,17 +1,34 @@
-.container {
-    height:100vh;
-    padding: 4rem;
-    margin-bottom: 3rem;
-}
-
 .hidden {
     display: none;
 }
-
-.block {
-    display: block;
+.headerText {
+    margin-top: -2rem;
+}
+body{
+    padding: 0 2rem;
+}
+.container{
+    border: 1px solid red;
+}
+p{
+    font-weight: bolder;
+    color:rgb(104, 181, 179);
 }
 
-.headerText {
-    overflow: scroll;
+.btn{
+    padding-top: 1.5rem;
+    font-weight: bolder;
+    height: 6rem;
+    width: 6rem;
+    font-size: 2rem;
+    color: rgb(104, 181, 179);
+    border: 1px solid black;
+    border-radius: 100%;
+}
+.button {
+    height: 4rem;
+    width: 75%;
+    background-color: rgb(148, 221, 216);
+    color: white;
+    font-weight: bolder;
 }
