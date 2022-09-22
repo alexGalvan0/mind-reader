@@ -109,9 +109,8 @@ btnReset.addEventListener('click', updatePage)
         
 let index = 0;
 function updatePage(e){
-    console.log(e)
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
-        index += 1 
+        index ++ 
 
    } else {
         index = 0;
@@ -129,7 +128,6 @@ function updatePage(e){
     for(btn of btns){btn.classList.remove('hidden', 'block')}
     btnPlay.classList.add(pages[index].goButton);
     btnReset.classList.add(pages[index].resetButton)
-    console.log(index)
 };
 
 
