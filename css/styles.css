@@ -1,5 +1,5 @@
 .container {
-    height:100vh
+    height:100vh;
 }
 
 .hidden {
@@ -8,4 +8,8 @@
 
 .block {
     display: block;
+}
+
+.headerText {
+    overflow: scroll;
 }

@@ -1,85 +1,85 @@
 class Page {
-        constructor(
-                        currentPage = true, 
-                        pageIndex = 0 ,
-                        helperText = "",
-                        buttonDisplayed = 'hidden',
-                        buttonText = "",
-                        headerText = "I can Read your mind",
-                        exampleText = "",
-                        goButton = "block",
-                        resetButton = "hidden"
-                    )
+    constructor(
+                currentPage = true, 
+                pageIndex = 0 ,
+                helperText = "",
+                buttonDisplayed = 'hidden',
+                buttonText = "",
+                headerText = "I can Read your mind",
+                exampleText = "",
+                goButton = "block",
+                resetButton = "hidden"
+                )
     {
-        this.currentPage = currentPage,
-        this.pageIndex = pageIndex,
-        this.helperText = helperText,
-        this.buttonDisplayed = buttonDisplayed,
-        this.buttonText = buttonText,
-        this.headerText = headerText,
-        this.exampleText = exampleText,
-        this.goButton = goButton,
-        this.resetButton = resetButton
+    this.currentPage = currentPage,
+    this.pageIndex = pageIndex,
+    this.helperText = helperText,
+    this.buttonDisplayed = buttonDisplayed,
+    this.buttonText = buttonText,
+    this.headerText = headerText,
+    this.exampleText = exampleText,
+    this.goButton = goButton,
+    this.resetButton = resetButton
     }
 }
 
 let page0 = new Page()
 let page1 = new Page(
-                        false, //currentPage
-                        1,//pageIndex
-                        "When you have your number click next",// helperText
-                        "block", //buttonDisplayed
-                        "NEXT", //ButtonText
-                        "Pick a number from 01-99", //HeaderText
-                        "", //ExampleText
-                        'hidden', //GoButton
-                        'block', // ResetButton
+                    false, //currentPage
+                    1,//pageIndex
+                    "When you have your number click next",// helperText
+                    "block", //buttonDisplayed
+                    "NEXT", //ButtonText
+                    "Pick a number from 01-99", //HeaderText
+                    "", //ExampleText
+                    'hidden', //GoButton
+                    'block', // ResetButton
                      );
 
 let page2 = new Page(
-                        false, //currentPage
-                        2,//pageIndex
-                        "click to proceed",// helperText
-                        "block", //buttonDisplayed
-                        "NEXT", //ButtonText
-                        "Add both digits together to get a new number", //HeaderText
-                        "Ex. 14 is 1 + 4 = 5", //ExampleText
-                        'hidden', //GoButton
-                        'block', // ResetButton
+                    false, //currentPage
+                    2,//pageIndex
+                    "click to proceed",// helperText
+                    "block", //buttonDisplayed
+                    "NEXT", //ButtonText
+                    "Add both digits together to get a new number", //HeaderText
+                    "Ex. 14 is 1 + 4 = 5", //ExampleText
+                    'hidden', //GoButton
+                    'block', // ResetButton
                     );
 let page3 = new Page(
-                        false, //currentPage
-                        3,//pageIndex
-                        "click to proceed",// helperText
-                        "block", //buttonDisplayed
-                        "NEXT", //ButtonText
-                        "Subtract your new number from the original number", //HeaderText
-                        "Ex. 14 - 5 = 9", //ExampleText
-                        'hidden', //GoButton
-                        'block', // ResetButton
+                    false, //currentPage
+                    3,//pageIndex
+                    "click to proceed",// helperText
+                    "block", //buttonDisplayed
+                    "NEXT", //ButtonText
+                    "Subtract your new number from the original number", //HeaderText
+                    "Ex. 14 - 5 = 9", //ExampleText
+                    'hidden', //GoButton
+                    'block', // ResetButton
                     );
 
 let page4 = new Page(
-                        false, //currentPage
-                        4,//pageIndex
-                        "Note the symbol beside the number",// helperText
-                        "block", //buttonDisplayed
-                        "REVEAL", //ButtonText
-                        "0-&", //HeaderText
-                        "Find your number", //ExampleText
-                        'hidden', //GoButton
-                        'block', // ResetButton
+                    false, //currentPage
+                    4,//pageIndex
+                    "Note the symbol beside the number",// helperText
+                    "block", //buttonDisplayed
+                    "REVEAL", //ButtonText
+                    "0-&", //HeaderText
+                    "Find your number", //ExampleText
+                    'hidden', //GoButton
+                    'block', // ResetButton
                     );
 let page5 = new Page(
-                        false, //currentPage
-                        5,//pageIndex
-                        "&",// helperText
-                        "hidden", //buttonDisplayed
-                        "", //ButtonText
-                        "&", //HeaderText
-                        "Your symbol is", //ExampleText
-                        'hidden', //GoButton
-                        'block', // ResetButton
+                    false, //currentPage
+                    5,//pageIndex
+                    "&",// helperText
+                    "hidden", //buttonDisplayed
+                    "", //ButtonText
+                    "&", //HeaderText
+                    "Your symbol is", //ExampleText
+                    'hidden', //GoButton
+                    'block', // ResetButton
                     );
 
 const pages = [
@@ -102,13 +102,41 @@ const btns = document.querySelectorAll('.btn')
 const navBtns = document.querySelectorAll('.navBtn');
 
 // create list of symbols
-const symbols = ['!','@','#','$','%','^','&','*','B'];
+const symbols = ['!','@','#','$','%','^','&','*','B','A','C']
+//shuffle symbols list
+
+const shuffled = symbols.sort((a,b) => 0.5 - Math.random())
+let all = [];
+for (let l=0; l<=9; l++){
+    all.push(symbols)
+}
+//nums
+let nums = []
+let shuffledIndex = 0;
+for (let i=1; i<=100; i++){
+    if(i%9 == 0){
+        nums.push(shuffled[1] + ' - ' + i)
+    } else {
+        nums.push(shuffled[shuffledIndex] + ' - ' + i )
+        if (shuffledIndex > 9){
+            shuffledIndex = 0;
+        }
+    }
+
+        shuffledIndex ++
+}
+
+
 
 for (navBtn of navBtns){navBtn.addEventListener('click', updatePage)}
 btnReset.addEventListener('click', updatePage)
         
+
+
 let index = 0;
 function updatePage(e){
+    page4.headerText = nums
+
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
         index ++ 
 
