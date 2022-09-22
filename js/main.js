@@ -34,7 +34,7 @@ let page1 = new Page(
                     "", //ExampleText
                     'hidden', //GoButton
                     'block', // ResetButton
-                     );
+                        );
 
 let page2 = new Page(
                     false, //currentPage
@@ -102,12 +102,12 @@ const btns = document.querySelectorAll('.btn')
 const navBtns = document.querySelectorAll('.navBtn');
 
 // create list of symbols
-const symbols = ['!','@','#','$','%','^','&','*','B','A','C','D']
+const symbols = ['!','@','#','$','%','^','&','*','B','A','C']
 //shuffle symbols list
 
 const shuffled = symbols.sort((a,b) => 0.5 - Math.random())
 let all = [];
-for (let l=0; l<=9; l++){
+for (let l=0; l<=symbols.length; l++){
     all.push(symbols)
 }
 //nums
@@ -138,7 +138,7 @@ let index = 0;
 function updatePage(e){
 
     page4.headerText = nums.toString().replaceAll(',','')
-    let answer = String(nums[8])
+    let answer = String(nums[9])
     let answerSymbol = answer[4]
     page5.headerText = answerSymbol;
     page5.exampleText = "Your symbol is " + answerSymbol;
