@@ -1,12 +1,3 @@
-const headerTexts = document.getElementById('headerText');
-const btnPlay = document.getElementById('btnPlay');
-const btnReset = document.getElementById('btnStart');
-const exampleText = document.getElementById('exampleText');
-const helperText = document.getElementById('helperText');
-const btnText = document.getElementById('btnText');
-
-const symbols = ['!','@','#','$','%','^','&','*','B'];
-
 class Page {
         constructor(
                         currentPage = true, 
@@ -17,7 +8,7 @@ class Page {
                         headerText = "I can Read your mind",
                         exampleText = "",
                         goButton = "block",
-                        resetButton = false
+                        resetButton = "hidden"
                     )
     {
         this.currentPage = currentPage,
@@ -28,11 +19,8 @@ class Page {
         this.headerText = headerText,
         this.exampleText = exampleText,
         this.goButton = goButton,
-        this .resetButton = resetButton
+        this.resetButton = resetButton
     }
-    update(){
-        return this.pageIndex ++
-    };    
 }
 
 let page0 = new Page()
@@ -44,8 +32,8 @@ let page1 = new Page(
                         "NEXT", //ButtonText
                         "Pick a number from 01-99", //HeaderText
                         "", //ExampleText
-                        false, //GoButton
-                        true, // ResetButton
+                        'hidden', //GoButton
+                        'block', // ResetButton
                      );
 
 let page2 = new Page(
@@ -56,8 +44,8 @@ let page2 = new Page(
                         "NEXT", //ButtonText
                         "Add both digits together to get a new number", //HeaderText
                         "Ex. 14 is 1 + 4 = 5", //ExampleText
-                        false, //GoButton
-                        true, // ResetButton
+                        'hidden', //GoButton
+                        'block', // ResetButton
                     );
 let page3 = new Page(
                         false, //currentPage
@@ -67,8 +55,8 @@ let page3 = new Page(
                         "NEXT", //ButtonText
                         "Subtract your new number from the original number", //HeaderText
                         "Ex. 14 - 5 = 9", //ExampleText
-                        false, //GoButton
-                        true, // ResetButton
+                        'hidden', //GoButton
+                        'block', // ResetButton
                     );
 
 let page4 = new Page(
@@ -79,8 +67,8 @@ let page4 = new Page(
                         "REVEAL", //ButtonText
                         "0-&", //HeaderText
                         "Find your number", //ExampleText
-                        false, //GoButton
-                        true, // ResetButton
+                        'hidden', //GoButton
+                        'block', // ResetButton
                     );
 let page5 = new Page(
                         false, //currentPage
@@ -90,8 +78,8 @@ let page5 = new Page(
                         "", //ButtonText
                         "&", //HeaderText
                         "Your symbol is", //ExampleText
-                        false, //GoButton
-                        true, // ResetButton
+                        'hidden', //GoButton
+                        'block', // ResetButton
                     );
 
 const pages = [
@@ -103,16 +91,45 @@ const pages = [
                 page5
             ];
 
+//HTML ELEMENTS
+const headerText = document.getElementById('headerText');
+const btnPlay = document.getElementById('btnPlay');
+const btnReset = document.getElementById('btnReset');
+const exampleText = document.getElementById('exampleText');
+const helperText = document.getElementById('helperText');
+const btnText = document.getElementById('btnText');
+const btns = document.querySelectorAll('.btn')
+const navBtns = document.querySelectorAll('.navBtn');
 
+// create list of symbols
+const symbols = ['!','@','#','$','%','^','&','*','B'];
 
-btnPlay.addEventListener('click', () => {
-    pages[pageIndex].update()
-    headerTexts.textContent = pages[pageIndex].headerText;
-    helperText.textContent = pages[pageIndex].textContent;
-    btnPlay.classList.add(pages[pageIndex].buttonDisplayed);
-    btnText.textContent = pages[pageIndex].buttonText;
-    exampleText.textContent = pages[pageIndex].exampleText;
-    btnPlay.classList(pages[pageIndex].goButton);
-    btnReset.classList(pages[pageIndex].resetButton);   
-});
+for (navBtn of navBtns){navBtn.addEventListener('click', updatePage)}
+btnReset.addEventListener('click', updatePage)
+        
+let index = 0;
+function updatePage(e){
+    console.log(e)
+   if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
+        index += 1 
+
+   } else {
+        index = 0;
+   }
+    headerText.textContent = pages[index].headerText;
+    helperText.textContent = pages[index].helperText;
+
+    //large next button
+    for (navBtn of navBtns){navBtn.classList.remove('hidden','block')}
+    btnText.classList.add(pages[index].buttonDisplayed);
+
+    btnText.innerHTML = pages[index].buttonText;
+    exampleText.textContent = pages[index].exampleText;
+
+    for(btn of btns){btn.classList.remove('hidden', 'block')}
+    btnPlay.classList.add(pages[index].goButton);
+    btnReset.classList.add(pages[index].resetButton)
+    console.log(index)
+};
+
 
