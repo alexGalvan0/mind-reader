@@ -73,7 +73,7 @@ let page4 = new Page(
 let page5 = new Page(
                     false, //currentPage
                     5,//pageIndex
-                    "&",// helperText
+                    "",// helperText
                     "hidden", //buttonDisplayed
                     "", //ButtonText
                     "&", //HeaderText
@@ -102,7 +102,7 @@ const btns = document.querySelectorAll('.btn')
 const navBtns = document.querySelectorAll('.navBtn');
 
 // create list of symbols
-const symbols = ['!','@','#','$','%','^','&','*','B','A','C']
+const symbols = ['!','@','#','$','%','^','&','*','B','A','C','D']
 //shuffle symbols list
 
 const shuffled = symbols.sort((a,b) => 0.5 - Math.random())
@@ -115,9 +115,11 @@ let nums = []
 let shuffledIndex = 0;
 for (let i=1; i<=100; i++){
     if(i%9 == 0){
-        nums.push(shuffled[1] + ' - ' + i)
+        nums.push(i + ' - ' + shuffled[1] )
+
     } else {
-        nums.push(shuffled[shuffledIndex] + ' - ' + i )
+        nums.push(i + ' - ' + shuffled[shuffledIndex].toString().replace(',','\n'))
+
         if (shuffledIndex > 9){
             shuffledIndex = 0;
         }
@@ -127,7 +129,6 @@ for (let i=1; i<=100; i++){
 }
 
 
-
 for (navBtn of navBtns){navBtn.addEventListener('click', updatePage)}
 btnReset.addEventListener('click', updatePage)
         
@@ -135,7 +136,11 @@ btnReset.addEventListener('click', updatePage)
 
 let index = 0;
 function updatePage(e){
+    console.log(typeof(numString))
     page4.headerText = nums
+    let answer = String(nums[8])
+    let answerSymbol = answer[4]
+    page5.headerText = answerSymbol;
 
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
         index ++ 
