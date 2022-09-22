@@ -2,14 +2,14 @@
     display: none;
 }
 .headerText {
-    margin-top: -2rem;
+    max-height: 3rem;
+    overflow: auto;
+    
 }
 body{
     padding: 0 2rem;
 }
-.container{
-    border: 1px solid red;
-}
+
 p{
     font-weight: bolder;
     color:rgb(104, 181, 179);
