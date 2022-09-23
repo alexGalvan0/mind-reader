@@ -101,15 +101,14 @@ const btnText = document.getElementById('btnText');
 const btns = document.querySelectorAll('.btn')
 const navBtns = document.querySelectorAll('.navBtn');
 
+
 // create list of symbols
 const symbols = ['!','@','#','$','%','^','&','*','B','A','C','Z']
 //shuffle symbols list
 
 const shuffled = symbols.sort((a,b) => 0.5 - Math.random())
-let all = [];
-for (let l=0; l<=symbols.length; l++){
-    all.push(symbols)
-}
+
+
 //nums
 let nums = []
 let shuffledIndex = 0;
@@ -131,10 +130,15 @@ for (let i=0; i<=99; i++){
 
 for (navBtn of navBtns){navBtn.addEventListener('click', updatePage)}
 btnReset.addEventListener('click', updatePage)
+
+if(localStorage.getItem('page') > 0){
+    btnPlay.innerHTML = 'spot'
+} else {
+    btnPlay.innerHTML = 'GO'
+}
         
 
-
-let index = 0;
+let index = localStorage.getItem('page') - 1;
 function updatePage(e){
 
     page4.headerText = nums.toString().replaceAll(',','')
@@ -145,23 +149,26 @@ function updatePage(e){
 
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
         index ++ 
+        localStorage.setItem('page', index)
 
    } else {
         index = 0;
+        localStorage.setItem('page',0)
+        btnPlay.innerHTML = 'GO'
    }
-    headerText.innerHTML = pages[index].headerText;
-    helperText.textContent = pages[index].helperText;
+    headerText.innerHTML = pages[localStorage.getItem('page') ].headerText;
+    helperText.textContent = pages[localStorage.getItem('page')].helperText;
 
     //large next button
     for (navBtn of navBtns){navBtn.classList.remove('hidden','block')}
-    btnText.classList.add(pages[index].buttonDisplayed);
+    btnText.classList.add(pages[localStorage.getItem('page')].buttonDisplayed);
 
-    btnText.innerHTML = pages[index].buttonText;
-    exampleText.textContent = pages[index].exampleText;
+    btnText.innerHTML = pages[localStorage.getItem('page')].buttonText;
+    exampleText.textContent = pages[localStorage.getItem('page')].exampleText;
 
     for(btn of btns){btn.classList.remove('hidden', 'block')}
-    btnPlay.classList.add(pages[index].goButton);
-    btnReset.classList.add(pages[index].resetButton)
+    btnPlay.classList.add(pages[localStorage.getItem('page')].goButton);
+    btnReset.classList.add(pages[localStorage.getItem('page')].resetButton)
 };
 
-
+window.onload = () =>{updatePage()}
