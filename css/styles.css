@@ -23,7 +23,7 @@ body{
 p{
 
     font-weight: bolder;
-    color:rgb(104, 181, 179);
+    color:rgb(104, 168, 181);
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
 }
@@ -43,9 +43,9 @@ p{
 }
 .button {
 
-    height: 4rem;
-    width: 20rem;
-    background-color: rgb(148, 221, 216);
+    height: 5rem;
+    width: 18rem;
+    background-color: rgb(155, 220, 233);
     color: white;
     font-weight: bolder;
     margin-bottom: 20px;
