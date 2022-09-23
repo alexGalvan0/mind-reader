@@ -12,9 +12,10 @@
 }
 body{
     padding: 0 2rem;
-    max-height: 100vh;
+
 }
 .container{
+
     max-width: 20rem;
     padding: 10px 10px 200px;
 }
@@ -42,6 +43,10 @@ p{
     color: rgb(155, 220, 233);
     border: 1px solid black;
     border-radius: 100%;
+    position: fixed;
+    right:5%;
+    bottom: 2%;
+
 }
 .button {
 
@@ -53,11 +58,6 @@ p{
     margin-bottom: 20px;
 }
 
-.roundBtn{
-    position: fixed;
-    top: 45rem;
-    left:15rem;
-}
-.example-text-container{
-    max-width: 17rem;
+.bottom-text-container{
+    height: 6rem
 }

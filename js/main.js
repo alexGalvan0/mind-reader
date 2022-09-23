@@ -145,9 +145,11 @@ function updatePage(e){
 
    if(e.target.id == 'btnPlay' || e.target.id == 'btnText'){
         index ++ 
+        localStorage.setItem('page', index)
 
    } else {
         index = 0;
+        localStorage.setItem('page',0)
    }
     headerText.innerHTML = pages[index].headerText;
     helperText.textContent = pages[index].helperText;
