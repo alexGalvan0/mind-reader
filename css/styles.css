@@ -20,7 +20,7 @@ p{
     font-weight: bolder;
     color:rgb(104, 181, 179);
     font-family: 'Montserrat', sans-serif;
-    font-size: 150%;
+    font-size: 1rem;
 }
 
 .main-text-container{
@@ -43,4 +43,5 @@ p{
     background-color: rgb(148, 221, 216);
     color: white;
     font-weight: bolder;
+    margin-bottom: 20px;
 }
