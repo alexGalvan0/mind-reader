@@ -17,6 +17,10 @@ body{
 .container{
     max-width: 20rem;
 }
+.text-center-container{
+    padding: 0 5rem;
+    border: 1px solid red;
+}
 p{
 
     font-weight: bolder;
