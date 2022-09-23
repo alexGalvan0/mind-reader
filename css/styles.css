@@ -1,0 +1,49 @@
+.hidden {
+    display: none;
+}
+
+#headerText {
+    font-family: 'Montserrat', sans-serif;
+    color: gray;
+    font-size:300% ;
+    height: 29rem;
+    overflow: auto;
+    
+}
+body{
+    padding: 0 2rem;
+    max-height: 100vh;
+}
+.container{
+    max-width: 20rem;
+}
+p{
+
+    font-weight: bolder;
+    color:rgb(104, 181, 179);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+.main-text-container{
+    margin-bottom: 1rem;
+}
+.btn{
+    padding-top: 1.5rem;
+    font-weight: bolder;
+    height: 6rem;
+    width: 6rem;
+    font-size: 2rem;
+    color: rgb(104, 181, 179);
+    border: 1px solid black;
+    border-radius: 100%;
+}
+.button {
+
+    height: 4rem;
+    width: 20rem;
+    background-color: rgb(148, 221, 216);
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
