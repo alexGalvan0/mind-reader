@@ -6,6 +6,9 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script src="/js/main.js" defer></script>
     <link rel="stylesheet" href="/css/styles.css">
@@ -13,17 +16,17 @@
   <body>
     <div style="height:100vh ;"class="container d-flex flex-column">
 
-        <div class="row mt-5 ">
+        <div class="row mt-5 main-text-container">
             <div class="col d-flex justify-content-center flex-column align-items-center">
-              <h1 id="headerText">I can Read your mind</h1>
-              <button id="btnText" class="button navBtn hidden"></button>
+              <h1 id="headerText" class="text-center">I can Read your mind</h1>
             </div>
         </div>
 
-        <div class="col d-flex justify-content-center">
-          <div class="row">
-            <p id="helperText" class=""></p>
-            <p class="" id="exampleText"></p>
+        <div class="col d-flex justify-content-center align-items-center">
+          <div class="row d-flex justify-content-center align-items-center">
+            <button id="btnText" class="button navBtn hidden"></button>
+            <p id="helperText" class=" text-center"></p>
+            <p class=" text-center" id="exampleText"></p>
           </div>
         </div>
 

@@ -1,23 +1,31 @@
 .hidden {
     display: none;
 }
+
 #headerText {
-    font-size:3rem ;
-    min-height: 30rem;
-    max-height: 25rem;
+    font-family: 'Montserrat', sans-serif;
+    color: gray;
+    font-size:300% ;
+    height: 29rem;
     overflow: auto;
-    padding: 0 4rem;
     
 }
 body{
     padding: 0 2rem;
+    max-height: 100vh;
 }
 
 p{
+
     font-weight: bolder;
     color:rgb(104, 181, 179);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150%;
 }
 
+.main-text-container{
+    margin-bottom: 1rem;
+}
 .btn{
     padding-top: 1.5rem;
     font-weight: bolder;
@@ -29,8 +37,9 @@ p{
     border-radius: 100%;
 }
 .button {
+
     height: 4rem;
-    width: 75%;
+    width: 20rem;
     background-color: rgb(148, 221, 216);
     color: white;
     font-weight: bolder;

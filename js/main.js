@@ -102,7 +102,7 @@ const btns = document.querySelectorAll('.btn')
 const navBtns = document.querySelectorAll('.navBtn');
 
 // create list of symbols
-const symbols = ['!','@','#','$','%','^','&','*','B','A','C']
+const symbols = ['!','@','#','$','%','^','&','*','B','A','C','Z']
 //shuffle symbols list
 
 const shuffled = symbols.sort((a,b) => 0.5 - Math.random())
